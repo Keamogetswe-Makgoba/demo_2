@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bright Smile Welcome Page</title>
+  <style>
+    body, html {
+      margin: 0; padding: 0; height: 100%;
+      font-family: Arial, sans-serif;
+      background-color: #e0f2fe;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    #root {
+      width: 100%;
+      max-width: 400px;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 3.5rem;
+      color: #0369a1;
+      margin-bottom: 16px;
+    }
+    p {
+      font-size: 1.25rem;
+      color: #475569;
+      margin-bottom: 32px;
+    }
+    button {
+      background-color: #0284c7;
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      font-size: 1.125rem;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #0369a1;
+    }
+    img {
+      width: 150px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- React and ReactDOM via CDN -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script>
+    const e = React.createElement;
+
+    function WelcomePage() {
+      function handleClick() {
+        alert('Get Started clicked! Implement navigation here.');
+      }
+
+      return e(
+        'div',
+        null,
+        e('img', {
+          src: 'https://th.bing.com/th/id/OIP.xXZwaYK9Dn1vKopxLoaLjwHaEK?rs=1&pid=ImgDetMain', // <-- URL wrapped in quotes
+          alt: 'Bright Smile Logo'
+        }),
+        e('h1', null, 'Bright Smile'),
+        e('p', null, 'Your journey to a healthier smile begins here.'),
+        e('button', { onClick: handleClick }, 'Get Started')
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(e(WelcomePage));
+  </script>
+</body>
+</html>
